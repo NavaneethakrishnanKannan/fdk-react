@@ -102,7 +102,7 @@ export default function RetunOrder({ showModal, modalType, setShowReturnForm, da
                                 {
                                     modalContent.slice(3, 6).map((value, index) => {
                                         return (
-                                            <div className='modal-items'>
+                                            <div key={index} className='modal-items'>
                                                 <div className='return-modal-content-title'>{value.text}</div>
                                                 <div className='return-modal-content-value'>{data[value.key]}</div>
                                             </div>

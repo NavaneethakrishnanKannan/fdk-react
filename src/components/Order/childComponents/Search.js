@@ -28,7 +28,6 @@ export default function Search({handleOnLoadOrders}) {
     const debouncedSearch = debounce(async (value) => {
         let data = { text: "All Orders", searchParams: value }
         handleOnLoadOrders(data, "search", false);
-        // setCharacters(await search(criteria));
       }, 500);
 
     return (

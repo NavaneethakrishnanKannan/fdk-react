@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { FwDataTable } from "@freshworks/crayons/react";
 import "./style.css";
 

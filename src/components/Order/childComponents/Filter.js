@@ -9,7 +9,6 @@ import { filterData, sortOrderData } from '../../../helpers/filterHelper';
 
 const Filter = ({ handleOnLoadOrders, handleUpdateResetFilter, resetFilter = false }) => {
 
-    // Setting initial states
     const [filterBy, setFilterBy] = useState(filterData[0]);
 
     useEffect(() => {
