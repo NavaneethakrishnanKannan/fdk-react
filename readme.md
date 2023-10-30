@@ -5,7 +5,7 @@ Freshdesk Full Page React Application
 The Order Tracking and Returns Management App is designed to empower support staff by providing them with a comprehensive tool to efficiently track customer orders and initiate returns.
 
 ## Technologies
-I used `React`
+`React`
 
 ## Setup
 - download or clone the repository
