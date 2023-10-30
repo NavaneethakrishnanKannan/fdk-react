@@ -1,5 +1,5 @@
 import Axios from 'axios';
 
-Axios.defaults.baseURL = "http://fdksupport.nkrishnan.tech"
+Axios.defaults.baseURL = "https://fdksupport.nkrishnan.tech"
 
 export default Axios
