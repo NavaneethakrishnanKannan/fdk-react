@@ -3,7 +3,7 @@ import Order from './Order';
 import { Fragment } from 'react/cjs/react.production.min';
 import Filter from './childComponents/Filter';
 import Search from './childComponents/Search';
-import Axios from '../../config/axiosConfig';
+import Axios from '../../config/axiosconfig';
 import { constructTableData } from '../../helpers/dataTableHelper';
 import { getSearchType } from '../../helpers/filterHelper';
 import RetunOrder from './childComponents/return';
@@ -41,11 +41,11 @@ export default function index({ handleOnShowInfo }) {
     const handleOnLoadOrders = (searchData = {}, type, loadAll = false) => {
         try {
             let query = `searchtype=all&searchParams=`;
-            if(!loadAll) {
+            if (!loadAll) {
                 if (Object.keys(searchData).length) {
                     if (type === "filter") {
                         query = `searchtype=${getSearchType(searchData.text)}`;
-                    } else if(type === "search") {
+                    } else if (type === "search") {
                         query = `searchtype=${getSearchType(searchData.text)}&searchParams=${searchData.searchParams}`;
                     }
                 }
@@ -122,7 +122,6 @@ export default function index({ handleOnShowInfo }) {
             if (err && err.response && err.response.data) {
                 msg = err.response.data.msg || err.response.data.message
             }
-            console.log({msg})
             setToastMsg({ show: true, error: false, msg: msg, type: "error" });
         } catch (error) {
             setToastMsg({ show: true, error: false, msg: "Some Error Occured", type: "error" });
@@ -133,7 +132,7 @@ export default function index({ handleOnShowInfo }) {
         try {
             setOtp(value);
         } catch (error) {
-            
+
         }
     }
 
@@ -149,7 +148,7 @@ export default function index({ handleOnShowInfo }) {
         try {
             setResetFilter(value)
         } catch (error) {
-            
+
         }
     }
 
@@ -162,7 +161,7 @@ export default function index({ handleOnShowInfo }) {
                         <div className='options-container'>
                             <div className='header-menu-options'>
                                 <Search handleOnLoadOrders={handleOnLoadOrders} />
-                                <Filter handleOnLoadOrders={handleOnLoadOrders} resetFilter = {resetFilter} handleUpdateResetFilter = {handleOnResetFilter} />
+                                <Filter handleOnLoadOrders={handleOnLoadOrders} resetFilter={resetFilter} handleUpdateResetFilter={handleOnResetFilter} />
                             </div>
                         </div>
                     </section>
@@ -175,9 +174,9 @@ export default function index({ handleOnShowInfo }) {
                     }
                 </div>
             </div>
-            {showReturnForm ? <RetunOrder showModal={showReturnForm} modalType={modalType} setShowReturnForm={setShowReturnForm} data={selectedData} validateOTP={handleValidateOTP} generateOTP={handleGenerateOTP} otpStatus={otpStatus} setReturnOtp = {handleOnUpdateOTP} /> : null}
+            {showReturnForm ? <RetunOrder showModal={showReturnForm} modalType={modalType} setShowReturnForm={setShowReturnForm} data={selectedData} validateOTP={handleValidateOTP} generateOTP={handleGenerateOTP} otpStatus={otpStatus} setReturnOtp={handleOnUpdateOTP} /> : null}
             {
-                <FwInlineMessage open = {toastMsg.show} duration = {2000} closable type={toastMsg.type} style = {{ position: "absolute", top: "10px", right: "10px", zIndex: "999" }} onFwHide = {handleOnCloseToast}>{toastMsg.msg}</FwInlineMessage>
+                <FwInlineMessage open={toastMsg.show} duration={2000} closable type={toastMsg.type} style={{ position: "absolute", top: "10px", right: "10px", zIndex: "999" }} onFwHide={handleOnCloseToast}>{toastMsg.msg}</FwInlineMessage>
             }
         </Fragment>
 

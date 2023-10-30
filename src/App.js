@@ -33,7 +33,7 @@ const App = () => {
       setChild((<Order client={client} handleOnShowInfo = {handleOnShowInfo} />))
     })
   }, [loaded])
-console.log({showInfo})
+
   return (
     <div className='app-main-layer'>
       {child}
