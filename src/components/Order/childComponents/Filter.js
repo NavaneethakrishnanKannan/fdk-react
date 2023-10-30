@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {
     FwButton,
-    FwIcon,
     FwListOptions,
     FwPopover,
 } from '@freshworks/crayons/react';

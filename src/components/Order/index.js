@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import Order from './Order';
-import { Fragment } from 'react/cjs/react.production.min';
 import Filter from './childComponents/Filter';
 import Search from './childComponents/Search';
 import Axios from '../../config/axiosconfig';
@@ -31,7 +30,6 @@ export default function index({ handleOnShowInfo }) {
     const handleOnClickReturn = (data) => {
         try {
             setSelectedData(data);
-            // setToastMsg({ show: true, error: false, msg: `OTP Validated and Return Request Accepted`, type: "success" });
             setShowReturnForm(true);
         } catch (error) {
 
@@ -108,7 +106,6 @@ export default function index({ handleOnShowInfo }) {
                 setResetFilter(true)
             }).catch(err => {
                 console.log("OTP Validation Failed", err);
-                // setShowReturnForm(false);
                 getErrorToastMsg(err);
             })
         } catch (error) {
@@ -153,7 +150,7 @@ export default function index({ handleOnShowInfo }) {
     }
 
     return (
-        <Fragment>
+        <React.Fragment>
             <div class="flex-item-border fw-flex-grow header-container">
                 <header className='header-container'>
                     <section className='header-section'>
@@ -178,7 +175,7 @@ export default function index({ handleOnShowInfo }) {
             {
                 <FwInlineMessage open={toastMsg.show} duration={2000} closable type={toastMsg.type} style={{ position: "absolute", top: "10px", right: "10px", zIndex: "999" }} onFwHide={handleOnCloseToast}>{toastMsg.msg}</FwInlineMessage>
             }
-        </Fragment>
+        </React.Fragment>
 
     )
 

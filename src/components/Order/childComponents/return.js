@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { FwButton, FwModal, FwModalTitle, FwModalContent } from "@freshworks/crayons/react";
-import { Fragment } from 'react/cjs/react.production.min';
 
 let modalContent = [
     { key: "orderNo", text: "Order No" },
