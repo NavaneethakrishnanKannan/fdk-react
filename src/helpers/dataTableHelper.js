@@ -18,12 +18,12 @@ export const constructTableData = (data, cb) => {
         let hideButtonIds = [];
         data.map((value, index) => {
             let { user, product, orderNo, orderDate, deliveryDate, orderStatus, returneligible } = value;
-            if(returneligible === false) {
+            if(returneligible === false && orderStatus !== "delivered") {
                 hideButtonIds.push(index);
             }
             tableData.rows.push(
                 { id: index, orderNo, userName: user.username, productId: product.id, title: product.title, 
-                orderDate: formatDate(new Date(orderDate)), deliveryDate: formatDate(new Date(deliveryDate)), orderStatus, returnEligible: returneligible.toString(), mobile: user.phone }
+                orderDate: formatDate(new Date(orderDate)), deliveryDate: formatDate(new Date(deliveryDate)), orderStatus: orderStatus === "returned" ? "return initiated" : orderStatus, returnEligible: returneligible.toString(), mobile: user.phone }
             )
         });
         tableData.rowActions.push({

@@ -13,7 +13,6 @@ export default function index({ handleOnShowInfo }) {
     const [orderData, setOrderData] = useState({ columns: [], rows: [], rowActions: [] });
     const [selectedData, setSelectedData] = useState([]);
     const [showReturnForm, setShowReturnForm] = useState(false);
-    const [modalType, setModalType] = useState("small");
     const [otpStatus, setOtpStatus] = useState("");
     const [otp, setOtp] = useState(false);
     const [toastMsg, setToastMsg] = useState({ show: false, error: "", msg: "", type: "" });
@@ -70,7 +69,6 @@ export default function index({ handleOnShowInfo }) {
     const handleGenerateOTP = (orderData) => {
         try {
             let orderNo = orderData.orderNo;
-            setToastMsg({ show: true, error: false, msg: `OTP sent to ${orderData.mobile}`, type: "success" });
             console.log(toastMsg)
             if (!orderNo) {
                 return;
@@ -171,7 +169,7 @@ export default function index({ handleOnShowInfo }) {
                     }
                 </div>
             </div>
-            {showReturnForm ? <RetunOrder showModal={showReturnForm} modalType={modalType} setShowReturnForm={setShowReturnForm} data={selectedData} validateOTP={handleValidateOTP} generateOTP={handleGenerateOTP} otpStatus={otpStatus} setReturnOtp={handleOnUpdateOTP} /> : null}
+            {showReturnForm ? <RetunOrder showModal={showReturnForm} modalType={"small"} setShowReturnForm={setShowReturnForm} data={selectedData} validateOTP={handleValidateOTP} generateOTP={handleGenerateOTP} otpStatus={otpStatus} setReturnOtp={handleOnUpdateOTP} /> : null}
             {
                 <FwInlineMessage open={toastMsg.show} duration={2000} closable type={toastMsg.type} style={{ position: "absolute", top: "10px", right: "10px", zIndex: "999" }} onFwHide={handleOnCloseToast}>{toastMsg.msg}</FwInlineMessage>
             }

@@ -112,7 +112,7 @@ export default function RetunOrder({ showModal, modalType, setShowReturnForm, da
                         </div>
                     </div>
                     <div className='return-area'>
-                        <div>Return Detail</div>
+                        <div>Return Reason</div>
                         <textarea className='return-text-area' />
                         <div className='return-otp-area'>
                             <div> {`OTP`}
